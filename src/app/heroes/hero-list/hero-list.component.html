@@ -1,0 +1,6 @@
+<div class="jumbotron">
+  <h1 class="display-3">Hero List</h1>
+</div>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let hero of heroes$; let key = index" [class.active]="hero.id === selectedId" [routerLink]="['/hero', hero.id]">{{hero.id}} -- {{hero.name}}</li>
+</ul>

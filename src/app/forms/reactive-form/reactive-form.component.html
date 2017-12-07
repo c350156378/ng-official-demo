@@ -1,0 +1,13 @@
+<div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <div *ngFor="let question of questions" class="form-control">
+      <app-reactive-form-question [question]="question" [form]="form"></app-reactive-form-question>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
+  </form>
+  <div *ngIf="payLoad" class="form-group">
+      <strong>Saved the following values</strong><br>{{payLoad}}
+  </div>
+</div>
+
+

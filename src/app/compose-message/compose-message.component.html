@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-block">
+    <div *ngIf="details">{{details}}</div>
+    <h4 class="card-title">Contact Crisis Center</h4>
+    <div class="form-group">
+      <label for="">Message</label>
+      <textarea class="form-control" [(ngModel)]="message" rows="10" cols="35" [disabled]="sending" name="message"></textarea>
+    </div>
+  </div>
+  <div class="card-block" *ngIf="!sending" >
+    <a (click)="send()" class="card-link">Send</a>
+    <a (click)="cancel()" class="card-link">Cancel</a>
+  </div>
+</div>

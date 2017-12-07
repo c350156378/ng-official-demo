@@ -1,0 +1,11 @@
+
+<div class="form-group">
+  <label for="">上传文件</label>
+  <input type="file" class="form-control-file" (change)="uploadFile($event)" name="file" />
+</div>
+
+
+<p>
+  {{hero$?.id}} -- {{hero$?.name}}
+</p>
+<button type="button" (click)="gotoHeroes(hero$)">返回</button>

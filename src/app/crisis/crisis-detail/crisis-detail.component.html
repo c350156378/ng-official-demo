@@ -1,0 +1,18 @@
+<div *ngIf="crisis$">
+
+  <button  (click)="cancel()">返回</button>
+  <h3>"{{ editName }}"</h3>
+  <div class="form-group">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <!-- <button class="btn btn-secondary"  (click)="cancel()" aria-label="">Cancel</button> -->
+      </span>
+      <input type="text" class="form-control" [(ngModel)]="editName">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary"  (click)="save()" aria-label="">Save</button>
+      </span>
+    </div>
+  </div>
+
+
+</div>
