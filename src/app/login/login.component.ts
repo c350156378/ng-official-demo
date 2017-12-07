@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   message: string;
 
-  constructor(private authService: AuthService, private router:Router) { 
+  constructor(public authService: AuthService, public router:Router) { 
     this.setMessage();
   }
 
