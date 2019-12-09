@@ -1,17 +1,16 @@
-<div class="container">
-    <nav class="nav">
-      <a class="nav-link"routerLink="/crisis-center" routerLinkActive="active">Crisis Center</a>
-      <a class="nav-link" routerLink="/heroes" routerLinkActive="active">Heroes</a>
-      <a class="nav-link" routerLink="/admin" routerLinkActive="active">Admin</a>
-      <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
-      <a name="" id="" class="btn btn-info" [routerLink]="[{outlets:{popup:['compose']}}]" role="button">Contact</a>
-      <a name="" id="" class="btn btn-success" [routerLink]="['/reactive-form']" role="button">Reactive Form</a>
-    </nav>
-    <router-outlet></router-outlet>
-    <!-- <router-outlet name="popup"></router-outlet>
+<!--
+ * @Author: your name
+ * @Date: 2019-12-03 16:49:56
+ * @LastEditTime: 2019-12-07 11:08:10
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \ng-official-demo\client\src\app\app.component.html
+ -->
+<app-layout>
+  <router-outlet></router-outlet>
+</app-layout>
 
-    <app-reactive-form [questions]="questions"></app-reactive-form>
 
-    <app-ad-banner [ads]="ads"></app-ad-banner> -->
-    
-</div>
+
+
+

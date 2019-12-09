@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2019-12-02 18:22:37
- * @LastEditTime: 2019-12-02 18:29:21
+ * @LastEditTime: 2019-12-07 17:22:50
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \ng-official-demo\server2\src\core\http-exception.filter.ts
@@ -16,13 +16,13 @@ export class HttpExceptionFilter implements ExceptionFilter {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse<Response>();
     const request = ctx.getRequest<Request>();
-    const status = exception.getStatus();
+    //const status = exception.getStatus();
 
 
     response
-      .status(status)
+      .status(400)
       .json({
-        statusCode:status,
+        statusCode:400,
         timestamp:new Date().toISOString(),
         path:request.url
       });

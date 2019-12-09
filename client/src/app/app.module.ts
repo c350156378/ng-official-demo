@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2019-12-03 16:49:56
+ * @LastEditTime: 2019-12-07 14:56:30
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \ng-official-demo\client\src\app\app.module.ts
+ */
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
@@ -30,6 +38,35 @@ import { InMemoryWebApiModule } from "angular-in-memory-web-api";
 import { InMemoryDataService } from "./service/in-memory-data.service";
 
 import { AuthInterceptor } from './guard/auth.interceptor';
+import { MaterialModule } from './shared/material.module';
+import { MatCommonModule } from '@angular/material';
+import { CommonModule } from '@angular/common';
+import { LayoutComponent } from './layout/layout.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { DdComponent } from './dd/dd.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { AformComponent } from './aform/aform.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCardModule } from '@angular/material/card';
+import { AtableComponent } from './atable/atable.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { DboardComponent } from './dboard/dboard.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatMenuModule } from '@angular/material/menu';
+import { AtreeComponent } from './atree/atree.component';
+import { MatTreeModule } from '@angular/material/tree';
+import { PixComponent } from './pix/pix.component';
+import { TreejsComponent } from './treejs/treejs.component';
+import { EchatComponent } from './echat/echat.component';
 
 
 @NgModule({
@@ -42,18 +79,45 @@ import { AuthInterceptor } from './guard/auth.interceptor';
     ReactiveFormQuestionComponent,
     AdDirective,
     AdBannerComponent,
-    HeroJobAdComponent, HeroProfileComponent
+    HeroJobAdComponent,
+    HeroProfileComponent,
+    LayoutComponent,
+    DdComponent,
+    AformComponent,
+    AtableComponent,
+    DboardComponent,
+    AtreeComponent, 
+    PixComponent, TreejsComponent, EchatComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    MaterialModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
+
     HeroesModule,
     LoginRoutingModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
-    AppRoutingModule
+    // InMemoryWebApiModule.forRoot(InMemoryDataService),
+    AppRoutingModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    DragDropModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatCardModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatGridListModule,
+    MatMenuModule,
+    MatTreeModule
   ],
   entryComponents: [HeroJobAdComponent, HeroProfileComponent],
   providers: [

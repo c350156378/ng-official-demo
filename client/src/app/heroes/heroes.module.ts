@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2019-12-03 16:49:56
+ * @LastEditTime: 2019-12-03 18:52:49
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \ng-official-demo\client\src\app\heroes\heroes.module.ts
+ */
 import { NgModule } from '@angular/core';
 
 import { FormsModule } from "@angular/forms";
@@ -10,9 +18,10 @@ import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroRoutingModule } from "./heroes-routing.module";
 
 import { HeroService } from "./hero.service";
+import { MaterialModule } from '../shared/material.module';
 
 @NgModule({
-    imports: [CommonModule, FormsModule, HeroRoutingModule],
+    imports: [CommonModule, FormsModule, HeroRoutingModule, MaterialModule],
     exports: [],
     declarations: [HeroDetailComponent, HeroListComponent],
     providers: [HeroService],

@@ -1,15 +1,26 @@
+<!--
+ * @Author: your name
+ * @Date: 2019-12-03 16:49:56
+ * @LastEditTime: 2019-12-05 11:16:50
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \ng-official-demo\client\src\app\crisis\crisis-detail\crisis-detail.component.html
+ -->
 <div *ngIf="crisis$">
 
-  <button  (click)="cancel()">返回</button>
+  <button mat-raised-button  (click)="cancel()">返回</button>
   <h3>"{{ editName }}"</h3>
   <div class="form-group">
     <div class="input-group">
       <span class="input-group-btn">
         <!-- <button class="btn btn-secondary"  (click)="cancel()" aria-label="">Cancel</button> -->
       </span>
-      <input type="text" class="form-control" [(ngModel)]="editName">
+      <mat-form-field>
+        <input matInput [(ngModel)]="editName">
+      </mat-form-field>
+      
       <span class="input-group-btn">
-        <button class="btn btn-secondary"  (click)="save()" aria-label="">Save</button>
+        <button mat-raised-button  (click)="save()" aria-label="">Save</button>
       </span>
     </div>
   </div>

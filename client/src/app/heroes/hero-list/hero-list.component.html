@@ -1,6 +1,17 @@
+<!--
+ * @Author: your name
+ * @Date: 2019-12-03 16:49:56
+ * @LastEditTime: 2019-12-03 18:48:25
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \ng-official-demo\client\src\app\heroes\hero-list\hero-list.component.html
+ -->
 <div class="jumbotron">
   <h1 class="display-3">Hero List</h1>
 </div>
-<ul class="list-group">
-  <li class="list-group-item" *ngFor="let hero of heroes$; let key = index" [class.active]="hero.id === selectedId" [routerLink]="['/hero', hero.id]">{{hero.id}} -- {{hero.name}}</li>
-</ul>
+
+<mat-list>
+  <mat-list-item *ngFor="let hero of heroes$; let key = index" [class.active]="hero.id === selectedId" [routerLink]="['/hero', hero.id]">
+    {{hero.id}} -- {{hero.name}}
+  </mat-list-item>
+</mat-list>

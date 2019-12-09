@@ -1,0 +1,41 @@
+<!--
+ * @Author: your name
+ * @Date: 2019-12-04 09:23:32
+ * @LastEditTime: 2019-12-07 13:05:14
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \ng-official-demo\client\src\app\layout\layout.component.html
+ -->
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/echat" routerLinkActive="active">echarts</a>
+      <a mat-list-item routerLink="/tree" routerLinkActive="active">threejs</a>
+      <a mat-list-item routerLink="/pix" routerLinkActive="active">pixijs</a>
+      <a mat-list-item routerLink="/dd" routerLinkActive="active">dd</a>
+      <a mat-list-item routerLink="/aform" routerLinkActive="active">aform</a>
+      <a mat-list-item routerLink="/atable" routerLinkActive="active">atable</a>
+      <a mat-list-item routerLink="/dboard" routerLinkActive="active">dboard</a>
+      <a mat-list-item routerLink="/atree" routerLinkActive="active">atree</a>
+      <a mat-list-item routerLink="/crisis-center" routerLinkActive="active">Crisis Center</a>
+      <a mat-list-item routerLink="/heroes" routerLinkActive="active">Heroes</a>
+      <a mat-list-item routerLink="/admin" routerLinkActive="active">Admin</a>
+      <a mat-list-item routerLink="/login" routerLinkActive="active">Login</a>
+      <a mat-list-item [routerLink]="[{outlets:{popup:['compose']}}]" role="button">Contact</a>
+      <a mat-list-item [routerLink]="['/reactive-form']" role="button">Reactive Form</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>client</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+      <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

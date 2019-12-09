@@ -1,10 +1,18 @@
+<!--
+ * @Author: your name
+ * @Date: 2019-12-03 16:49:56
+ * @LastEditTime: 2019-12-03 19:07:27
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \ng-official-demo\client\src\app\crisis\crisis-list\crisis-list.component.html
+ -->
 <div class="jumbotron">
   <h1 class="display-3">Crisis Center</h1>
 </div>
 
-<ul class="list-group">
-  <li class="list-group-item" *ngFor="let cris of crisis$ | async; let key = index" [class.active]="cris.id === selectedId"
-    [routerLink]="[cris.id]">{{cris.id}} -- {{cris.name}}</li>
-</ul>
+<mat-list>
+  <mat-list-item *ngFor="let cris of crisis$ | async; let key = index" [class.active]="cris.id === selectedId"
+    [routerLink]="[cris.id]">{{cris.id}} -- {{cris.name}}</mat-list-item>
+</mat-list>
 
 <router-outlet></router-outlet>
