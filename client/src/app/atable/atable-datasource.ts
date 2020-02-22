@@ -1,38 +1,28 @@
+/*
+ * @Author: your name
+ * @Date: 2019-12-14 18:00:04
+ * @LastEditTime: 2019-12-16 17:25:04
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \ng-official-demo\client\src\app\atable\atable-datasource.ts
+ */
 import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { map } from 'rxjs/operators';
+import { map, catchError, tap } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 
 // TODO: Replace this with your own data model type
 export interface AtableItem {
-  name: string;
-  id: number;
+  date: string;
+  _id: string;
 }
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: AtableItem[] = [
-  {id: 1, name: 'Hydrogen'},
-  {id: 2, name: 'Helium'},
-  {id: 3, name: 'Lithium'},
-  {id: 4, name: 'Beryllium'},
-  {id: 5, name: 'Boron'},
-  {id: 6, name: 'Carbon'},
-  {id: 7, name: 'Nitrogen'},
-  {id: 8, name: 'Oxygen'},
-  {id: 9, name: 'Fluorine'},
-  {id: 10, name: 'Neon'},
-  {id: 11, name: 'Sodium'},
-  {id: 12, name: 'Magnesium'},
-  {id: 13, name: 'Aluminum'},
-  {id: 14, name: 'Silicon'},
-  {id: 15, name: 'Phosphorus'},
-  {id: 16, name: 'Sulfur'},
-  {id: 17, name: 'Chlorine'},
-  {id: 18, name: 'Argon'},
-  {id: 19, name: 'Potassium'},
-  {id: 20, name: 'Calcium'},
+  { _id: ' 1', date: 'Hydrogen' },
 ];
+
 
 /**
  * Data source for the Atable view. This class should
@@ -40,12 +30,12 @@ const EXAMPLE_DATA: AtableItem[] = [
  * (including sorting, pagination, and filtering).
  */
 export class AtableDataSource extends DataSource<AtableItem> {
-  data: AtableItem[] = EXAMPLE_DATA;
+  data: AtableItem[];
   paginator: MatPaginator;
   sort: MatSort;
 
   constructor() {
-    super();
+    super()
   }
 
   /**
@@ -71,7 +61,7 @@ export class AtableDataSource extends DataSource<AtableItem> {
    *  Called when the table is being destroyed. Use this function, to clean up
    * any open connections or free any held resources that were set up during connect.
    */
-  disconnect() {}
+  disconnect() { }
 
   /**
    * Paginate the data (client-side). If you're using server-side pagination,
@@ -94,8 +84,8 @@ export class AtableDataSource extends DataSource<AtableItem> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
-        case 'id': return compare(+a.id, +b.id, isAsc);
+        case 'name': return compare(a.date, b.date, isAsc);
+        case 'id': return compare(+a._id, +b._id, isAsc);
         default: return 0;
       }
     });

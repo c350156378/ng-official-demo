@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2019-12-03 16:49:56
- * @LastEditTime: 2019-12-07 14:56:30
+ * @LastEditTime: 2019-12-16 17:16:52
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \ng-official-demo\client\src\app\app.module.ts
@@ -37,7 +37,7 @@ import { AdService } from './ad-banner/ad.service';
 import { InMemoryWebApiModule } from "angular-in-memory-web-api";
 import { InMemoryDataService } from "./service/in-memory-data.service";
 
-import { AuthInterceptor } from './guard/auth.interceptor';
+import { HttpErrorInterceptor } from './guard/auth.interceptor';
 import { MaterialModule } from './shared/material.module';
 import { MatCommonModule } from '@angular/material';
 import { CommonModule } from '@angular/common';
@@ -128,7 +128,7 @@ import { EchatComponent } from './echat/echat.component';
     InMemoryDataService,
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
+      useClass: HttpErrorInterceptor,
       multi: true
     }],
   bootstrap: [AppComponent]
