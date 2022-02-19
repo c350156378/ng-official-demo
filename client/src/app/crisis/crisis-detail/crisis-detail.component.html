@@ -7,8 +7,7 @@
  * @FilePath: \ng-official-demo\client\src\app\crisis\crisis-detail\crisis-detail.component.html
  -->
 <div *ngIf="crisis$">
-
-  <button mat-raised-button  (click)="cancel()">返回</button>
+  <button mat-raised-button (click)="cancel()">返回</button>
   <h3>"{{ editName }}"</h3>
   <div class="form-group">
     <div class="input-group">
@@ -16,14 +15,12 @@
         <!-- <button class="btn btn-secondary"  (click)="cancel()" aria-label="">Cancel</button> -->
       </span>
       <mat-form-field>
-        <input matInput [(ngModel)]="editName">
+        <input matInput [(ngModel)]="editName" />
       </mat-form-field>
-      
+
       <span class="input-group-btn">
-        <button mat-raised-button  (click)="save()" aria-label="">Save</button>
+        <button mat-raised-button (click)="save()" aria-label="">Save</button>
       </span>
     </div>
   </div>
-
-
 </div>

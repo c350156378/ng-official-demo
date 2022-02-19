@@ -6,24 +6,31 @@
  * @Description: In User Settings Edit
  * @FilePath: \ng-official-demo\client\src\app\heroes\heroes.module.ts
  */
-import { NgModule } from '@angular/core';
+import { NgModule } from "@angular/core";
 
 import { FormsModule } from "@angular/forms";
 
 import { CommonModule } from "@angular/common";
 
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { HeroListComponent } from './hero-list/hero-list.component';
+import { HeroDetailComponent } from "./hero-detail/hero-detail.component";
+import { HeroListComponent } from "./hero-list/hero-list.component";
 
 import { HeroRoutingModule } from "./heroes-routing.module";
 
 import { HeroService } from "./hero.service";
-import { MaterialModule } from '../shared/material.module';
+import { MatListModule } from "@angular/material/list";
+import { MatButtonModule } from "@angular/material/button";
 
 @NgModule({
-    imports: [CommonModule, FormsModule, HeroRoutingModule, MaterialModule],
-    exports: [],
-    declarations: [HeroDetailComponent, HeroListComponent],
-    providers: [HeroService],
+  imports: [
+    CommonModule,
+    FormsModule,
+    HeroRoutingModule,
+    MatListModule,
+    MatButtonModule,
+  ],
+  exports: [],
+  declarations: [HeroDetailComponent, HeroListComponent],
+  providers: [HeroService],
 })
-export class HeroesModule { }
+export class HeroesModule {}

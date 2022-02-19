@@ -8,74 +8,83 @@
  -->
 <div class="mat-elevation-z8">
   <mat-form-field>
-    <input matInput placeholder="搜索蓝号" #input>
+    <input matInput placeholder="搜索蓝号" #input />
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="搜索红号" #input2>
+    <input matInput placeholder="搜索红号" #input2 />
   </mat-form-field>
-  <table mat-table [dataSource]="dataSource" class="full-width-table" matSort aria-label="Elements">
-
+  <table
+    mat-table
+    [dataSource]="dataSource"
+    class="full-width-table"
+    matSort
+    aria-label="Elements"
+  >
     <ng-container matColumnDef="index">
       <th mat-header-cell *matHeaderCellDef>序号</th>
-      <td mat-cell *matCellDef="let index = index">{{index+1+pager}}</td>
+      <td mat-cell *matCellDef="let index = index">{{ index + 1 + pager }}</td>
     </ng-container>
 
-
-    <ng-container matColumnDef="_id">
+    <ng-container matColumnDef="issueno">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>期数</th>
-      <td mat-cell *matCellDef="let row">{{row._id}}</td>
+      <td mat-cell *matCellDef="let row">{{ row.issueno }}</td>
     </ng-container>
-
 
     <ng-container matColumnDef="red1">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>红1</th>
-      <td mat-cell *matCellDef="let row">{{row.red1}}</td>
+      <td mat-cell *matCellDef="let row">{{ row.red1 }}</td>
     </ng-container>
     <ng-container matColumnDef="red2">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>红2</th>
-      <td mat-cell *matCellDef="let row">{{row.red2}}</td>
+      <td mat-cell *matCellDef="let row">{{ row.red2 }}</td>
     </ng-container>
     <ng-container matColumnDef="red3">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>红3</th>
-      <td mat-cell *matCellDef="let row">{{row.red3}}</td>
+      <td mat-cell *matCellDef="let row">{{ row.red3 }}</td>
     </ng-container>
     <ng-container matColumnDef="red4">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>红4</th>
-      <td mat-cell *matCellDef="let row">{{row.red4}}</td>
+      <td mat-cell *matCellDef="let row">{{ row.red4 }}</td>
     </ng-container>
     <ng-container matColumnDef="red5">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>红5</th>
-      <td mat-cell *matCellDef="let row">{{row.red5}}</td>
+      <td mat-cell *matCellDef="let row">{{ row.red5 }}</td>
     </ng-container>
 
     <ng-container matColumnDef="red6">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>红6</th>
-      <td mat-cell *matCellDef="let row">{{row.red6}}</td>
+      <td mat-cell *matCellDef="let row">{{ row.red6 }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="allred">
+    <ng-container matColumnDef="number">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>全部红</th>
-      <td mat-cell *matCellDef="let row">{{row.allred}}</td>
+      <td mat-cell *matCellDef="let row">{{ row.number }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="blue">
+    <ng-container matColumnDef="refernumber">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>蓝</th>
-      <td mat-cell *matCellDef="let row">{{row.blue}}</td>
+      <td mat-cell *matCellDef="let row">{{ row.refernumber }}</td>
     </ng-container>
-    
+
     <ng-container matColumnDef="oddeven">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>奇偶比</th>
-      <td mat-cell *matCellDef="let row">{{row.oddeven}}</td>
+      <td mat-cell *matCellDef="let row">{{ row.oddeven }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="date">
+    <ng-container matColumnDef="opendate">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>日期</th>
-      <td mat-cell *matCellDef="let row">{{row.date}}</td>
+      <td mat-cell *matCellDef="let row">{{ row.opendate }}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 
-  <mat-paginator #paginator [length]="totalCount" [pageSizeOptions]="[5, 10, 20]" [pageSize]="pageSize" showFirstLastButtons></mat-paginator>
+  <mat-paginator
+    #paginator
+    [length]="totalCount"
+    [pageSizeOptions]="[5, 10, 20]"
+    [pageSize]="pageSize"
+    showFirstLastButtons
+  ></mat-paginator>
 </div>
